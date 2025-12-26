@@ -1,0 +1,222 @@
+/* ============================================
+   COMPONENT - LETTER CARD & HERO SECTION
+   ============================================ */
+
+/* Hero Section - Gengar Sprite */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-xl) 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+.gengar-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.gengar-sprite {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/img/GengarIcon1.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    filter: drop-shadow(0 0 40px var(--color-secondary));
+    animation: pulse-glow-image 2s ease-in-out infinite alternate;
+}
+
+/* Image-based Gengar - no pseudo-elements needed */
+
+.gengar-shadow {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(74, 43, 169, 0.6) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: shadow-pulse 3s ease-in-out infinite;
+}
+
+/* Letter Section */
+.letter-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.dialog-box {
+    position: relative;
+    background: var(--color-bg-dark) !important;
+    border: var(--border-width) solid var(--color-border) !important;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg) !important;
+    box-shadow:
+        var(--shadow-lg),
+        0 0 30px rgba(166, 108, 255, 0.3);
+    min-height: 200px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.dialog-indicator {
+    position: absolute;
+    top: -15px;
+    left: var(--spacing-lg);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-lg);
+    color: var(--color-border);
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.letter-text {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-primary);
+    text-shadow: 1px 1px 0 var(--color-bg-dark);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.dialog-cursor {
+    position: absolute;
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    color: var(--color-secondary);
+    animation: blink-cursor 1s step-end infinite;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .gengar-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .letter-text {
+        font-size: var(--font-size-base);
+    }
+
+    .dialog-box {
+        padding: var(--spacing-md) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .gengar-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .letter-text {
+        font-size: var(--font-size-xl);
+    }
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse-glow {
+    from {
+        box-shadow:
+            0 0 40px var(--color-secondary),
+            inset 0 0 40px rgba(255, 255, 255, 0.1);
+    }
+
+    to {
+        box-shadow:
+            0 0 60px var(--color-secondary),
+            0 0 80px var(--color-secondary-light),
+            inset 0 0 60px rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes pulse-glow-image {
+    from {
+        filter: drop-shadow(0 0 40px var(--color-secondary));
+    }
+
+    to {
+        filter: drop-shadow(0 0 60px var(--color-secondary)) drop-shadow(0 0 80px var(--color-secondary-light));
+    }
+}
+
+@keyframes shadow-pulse {
+
+    0%,
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateX(-50%) scale(0.8);
+        opacity: 0.3;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    90%,
+    100% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes blink-cursor {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,127 @@
+/* ============================================
+   MAIN CSS - IMPORTS ALL MODULES
+   ============================================ */
+
+/* Base Styles */
+@import url('./base/reset.css');
+@import url('./base/variables.css');
+
+/* Layout Styles */
+@import url('./layout/container.css');
+@import url('./layout/header.css');
+
+/* Component Styles */
+@import url('./components/dialog.css');
+@import url('./components/card.css');
+@import url('./components/player.css');
+@import url('./components/animations.css');
+@import url('./components/responsive.css');
+
+/* ============================================
+   GLOBAL BODY STYLES
+   ============================================ */
+
+body {
+    font-family: var(--font-secondary);
+    background: var(--gradient-bg);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-dark);
+    border-left: 2px solid var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+    box-shadow: 0 0 10px var(--color-secondary);
+}
+
+/* Firefox Scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--color-bg-dark);
+}
+
+/* Selection Styling */
+::selection {
+    background: var(--color-secondary);
+    color: var(--color-bg-dark);
+}
+
+::-moz-selection {
+    background: var(--color-secondary);
+    color: var(--color-bg-dark);
+}
+
+/* Focus Styles for Accessibility */
+*:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+button:focus,
+a:focus {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/* NES.css Overrides */
+.nes-container.is-dark {
+    background-color: var(--color-bg-dark) !important;
+    color: var(--color-text-primary) !important;
+}
+
+.nes-btn.is-primary {
+    background-color: var(--color-primary) !important;
+    color: var(--color-text-primary) !important;
+}
+
+.nes-btn.is-primary:hover {
+    background-color: var(--color-primary-light) !important;
+}
+
+/* Utility Classes */
+.text-glow {
+    text-shadow: 0 0 10px currentColor;
+}
+
+.box-glow {
+    box-shadow: 0 0 20px var(--color-secondary);
+}
+
+.pixel-perfect {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Print Styles */
+@media print {
+
+    .intro-screen,
+    .game-header,
+    .game-footer,
+    #particle-canvas,
+    .hearts-container {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}

@@ -1,0 +1,95 @@
+/* ============================================
+   RESPONSIVE IMPROVEMENTS FOR MOBILE
+   ============================================ */
+
+/* Extra Mobile Optimizations */
+@media (max-width: 576px) {
+
+    /* Music Player Mobile Adjustments */
+    .gameboy-screen {
+        margin: 0 var(--spacing-xs);
+    }
+
+    .screen-header {
+        padding: var(--spacing-xs);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .screen-title {
+        letter-spacing: 1px;
+    }
+
+    .screen-content {
+        padding: 4px;
+    }
+
+    .screen-content iframe {
+        height: 250px !important;
+        min-height: 250px;
+    }
+
+    .gameboy-screen .controls {
+        margin-top: var(--spacing-sm);
+        gap: var(--spacing-xs);
+    }
+
+    .gameboy-screen .control-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Dialog Box Mobile */
+    .dialog-box {
+        min-height: 150px !important;
+    }
+
+    /* Gengar Mobile */
+    .gengar-container {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    /* Header Mobile */
+    .game-header {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .header-label {
+        font-size: 0.45rem !important;
+    }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 577px) and (max-width: 768px) {
+    .screen-content iframe {
+        height: 300px !important;
+    }
+
+    .gengar-container {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* Desktop Optimizations */
+@media (min-width: 769px) {
+    .screen-content iframe {
+        height: 352px !important;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+    .gengar-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .dialog-box {
+        min-height: 120px !important;
+    }
+
+    .screen-content iframe {
+        height: 280px !important;
+    }
+}

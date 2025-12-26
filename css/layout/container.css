@@ -1,0 +1,203 @@
+/* ============================================
+   LAYOUT - CONTAINER & GRID SYSTEMS
+   ============================================ */
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+    position: relative;
+    z-index: var(--z-base);
+}
+
+/* Main Content Wrapper */
+.main-content {
+    position: relative;
+    min-height: 100vh;
+    background: var(--gradient-bg);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Section Spacing */
+section {
+    margin-bottom: var(--spacing-xl);
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+/* Flexbox Utilities */
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* Grid Utilities */
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Visibility Utilities */
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Positioning Utilities */
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+}
+
+/* Centering */
+.center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Responsive Padding */
+.padding-sm {
+    padding: var(--spacing-sm);
+}
+
+.padding-md {
+    padding: var(--spacing-md);
+}
+
+.padding-lg {
+    padding: var(--spacing-lg);
+}
+
+/* Responsive Margin */
+.margin-sm {
+    margin: var(--spacing-sm);
+}
+
+.margin-md {
+    margin: var(--spacing-md);
+}
+
+.margin-lg {
+    margin: var(--spacing-lg);
+}
+
+/* Text Alignment */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Width Utilities */
+.w-full {
+    width: 100%;
+}
+
+.w-auto {
+    width: auto;
+}
+
+/* Height Utilities */
+.h-full {
+    height: 100%;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+/* Overflow */
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-sm);
+    }
+
+    section {
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (min-width: 1025px) {
+    .container {
+        padding: var(--spacing-lg);
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Una carta digital interactiva con temática Pokémon Gengar">
+    <title>Carta Digital para Mire | Jhonas</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+    <!-- NES.css -->
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- Intro Screen -->
+    <div id="intro-screen" class="intro-screen">
+        <div class="intro-content">
+            <h1 class="glitch-text">Carta de Jhonas</h1>
+            <button class="nes-btn is-primary press-start-btn" id="press-start">
+                <span class="blink">PRESS START</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="main-content hidden">
+        <!-- Particle Canvas Background -->
+        <canvas id="particle-canvas"></canvas>
+
+        <!-- Header -->
+        <header class="game-header">
+            <div class="header-content">
+                <span class="header-label">FOR: <span class="highlight">MIRE</span></span>
+                <span class="header-separator">|</span>
+                <span class="header-label">FROM: <span class="highlight">JHONAS</span></span>
+            </div>
+        </header>
+
+        <!-- Main Container -->
+        <main class="container">
+            <!-- Hero Section - Gengar Sprite -->
+            <section class="hero-section">
+                <div class="gengar-container">
+                    <div class="gengar-sprite"></div>
+                    <div class="gengar-shadow"></div>
+                </div>
+            </section>
+
+            <!-- Letter Card -->
+            <section class="letter-section">
+                <div class="nes-container is-dark dialog-box">
+                    <div class="dialog-indicator">▼</div>
+                    <p id="letter-text" class="letter-text"></p>
+                    <div class="dialog-cursor hidden" id="dialog-cursor">▼</div>
+                </div>
+            </section>
+
+            <!-- Multimedia Section - Spotify Player -->
+            <section class="multimedia-section">
+                <div class="gameboy-screen">
+                    <div class="screen-header">
+                        <span class="screen-title">♪ MUSIC PLAYER ♪</span>
+                    </div>
+                    <div class="screen-content">
+                        <iframe data-testid="embed-iframe" style="border-radius:12px"
+                            src="https://open.spotify.com/embed/playlist/66T2dk149wBcMIgIXXm8BJ?utm_source=generator"
+                            width="100%" height="352" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Hearts Container -->
+            <div id="hearts-container" class="hearts-container"></div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="game-footer">
+            <p class="footer-text">Made with 💜 by Jhonas | 2025</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
